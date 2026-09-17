@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mario Codina Sánchez | Desarrollo Web y Diseño Digital</title>
+<meta name="description" content="Desarrollador web y creador de contenido digital. Páginas web, aplicaciones web, videos, imágenes, banners, logos y transcripción de documentos. Trabajo remoto.">
+<meta property="og:title" content="Mario Codina Sánchez | Desarrollo Web y Diseño Digital">
+<meta property="og:description" content="Páginas y aplicaciones web, videos, imágenes, banners, logos y transcripción de documentos.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2210%22%20fill%3D%22%230f766e%22/%3E%3Cpath%20d%3D%22M9%2028V13l6.5%208L22%2013v15%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M33%2016.5a6%206%200%201%200%200%207%22%20fill%3D%22none%22%20stroke%3D%22%2399f6e4%22%20stroke-width%3D%223.2%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0;
+    --brand:#0f766e; --brand-2:#14b8a6; --soft:#ecfdf5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  a{color:var(--brand);text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--ink)}
+  .logo .mark{width:38px;height:38px;flex:none}
+  .logo .wm{display:flex;flex-direction:column;line-height:1.1}
+  .logo b{font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .logo small{font-size:.7rem;color:var(--brand);font-weight:600;letter-spacing:.02em}
+  .links{display:flex;gap:22px;font-size:.92rem;font-weight:500}
+  .links a{color:var(--muted)} .links a:hover{color:var(--brand)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-weight:600;font-size:.92rem;border:1px solid transparent;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--brand);color:#fff} .btn-primary:hover{background:#115e59}
+  .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)} .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+
+  /* Hero */
+  header.hero{padding:72px 0 56px;background:linear-gradient(135deg,#0f766e 0%,#134e4a 100%);color:#fff}
+  .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+  .avatar{width:150px;height:150px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;font-size:3rem;font-weight:800;border:5px solid rgba(255,255,255,.3);overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .hero h1{font-size:2.6rem;line-height:1.15;letter-spacing:-.03em}
+  .hero .role{font-size:1.2rem;color:#99f6e4;font-weight:600;margin:6px 0 14px}
+  .hero p.lead{max-width:620px;color:#e2f7f4}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .hero .btn-primary{background:#fff;color:var(--brand)} .hero .btn-primary:hover{background:#ccfbf1}
+  .hero .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;font-size:.85rem}
+  .badges span{background:rgba(255,255,255,.12);padding:5px 12px;border-radius:999px}
+
+  /* Sections */
+  section{padding:64px 0}
+  section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--brand);font-weight:700}
+  h2{font-size:1.9rem;letter-spacing:-.02em;margin:4px 0 28px}
+  .grid{display:grid;gap:18px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  section.alt .card{background:var(--bg)}
+  .card h3{font-size:1.05rem;margin:10px 0 6px}
+  .card p{color:var(--muted);font-size:.93rem}
+  .icon{width:44px;height:44px;border-radius:11px;background:var(--soft);color:var(--brand);display:grid;place-items:center}
+  .icon svg{width:24px;height:24px}
+
+  /* About */
+  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+  .about p{color:var(--muted);margin-bottom:12px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat b{display:block;font-size:1.9rem;color:var(--brand);line-height:1.1}
+  .stat small{color:var(--muted)}
+
+  /* Skills */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .chip{background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-size:.86rem;font-weight:500}
+  section.alt .chip{background:var(--bg)}
+
+  /* Timeline */
+  .tl{border-left:3px solid var(--line);padding-left:24px;display:grid;gap:26px}
+  .tl-item{position:relative}
+  .tl-item::before{content:"";position:absolute;left:-32px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--brand);border:3px solid #fff;box-shadow:0 0 0 1px var(--brand)}
+  .tl-item h3{font-size:1.05rem}
+  .tl-item .meta{color:var(--brand);font-weight:600;font-size:.88rem}
+  .tl-item ul{color:var(--muted);font-size:.93rem;margin:6px 0 0 18px}
+
+  /* Portfolio */
+  .thumb{aspect-ratio:16/10;border-radius:10px;background:linear-gradient(135deg,#ccfbf1,#e0f2fe);display:grid;place-items:center;color:var(--brand);font-weight:700;margin-bottom:12px;overflow:hidden}
+  .thumb img{width:100%;height:100%;object-fit:cover}
+  .tag{display:inline-block;font-size:.75rem;font-weight:600;color:var(--brand);background:var(--soft);padding:2px 9px;border-radius:999px;margin-right:4px}
+
+  /* Process */
+  .step b{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font-size:.9rem}
+
+  /* Contact */
+  .contact{background:linear-gradient(135deg,#0f766e,#134e4a);color:#fff;border-radius:18px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+  .contact h2{color:#fff;margin-bottom:10px}
+  .contact p{color:#d1fae5}
+  .contact-list{display:grid;gap:10px}
+  .contact-list a{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);color:#fff;padding:12px 16px;border-radius:12px;font-weight:500;word-break:break-all}
+  .contact-list a:hover{background:rgba(255,255,255,.2)}
+  .contact-list svg{width:20px;height:20px;flex:none}
+
+  .print-only{display:none}
+  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0}
+
+  @media (max-width:860px){
+    .links{display:none}
+    .g3{grid-template-columns:1fr 1fr}
+    .about,.contact{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .avatar{margin:0 auto;width:120px;height:120px}
+    .hero .actions,.badges{justify-content:center}
+    .hero h1{font-size:2rem}
+    .g3,.g2{grid-template-columns:1fr}
+    section{padding:48px 0}
+    .contact{padding:26px}
+    nav .btn span{display:none}
+  }
+
+  /* Versión impresa / PDF */
+  @media print{
+    @page{size:A4;margin:12mm}
+    body{background:#fff;font-size:10.5pt;line-height:1.45}
+    nav,.no-print,.hero .actions,.stats{display:none!important}
+    body{font-size:9.5pt}
+    .card h3{font-size:10pt;margin:4px 0 2px} .card p{font-size:8.8pt}
+    .icon{display:none}
+    .chip{padding:2px 8px;font-size:8.5pt}
+    .about{grid-template-columns:1fr!important}
+    header.hero{background:#fff!important;color:var(--ink);padding:0 0 14px;border-bottom:3px solid var(--brand)}
+    .hero .role{color:var(--brand)} .hero p.lead{color:var(--muted)}
+    .avatar{width:90px;height:90px;font-size:2rem;border:3px solid var(--brand)}
+    .badges span{background:var(--soft);color:var(--brand)}
+    section,section.alt{padding:8px 0;background:#fff;border:0}
+    h2{font-size:1.1rem;margin:0 0 6px}
+    footer{display:none}
+    #habilidades .g2{grid-template-columns:repeat(4,1fr)}
+    #habilidades .chip{font-size:7.8pt;padding:1px 6px}
+    .about p{margin-bottom:4px}
+    .badges{margin-top:6px;gap:6px;font-size:8pt}
+    .hero .role{margin:2px 0 6px}
+    h2,.sec-title{break-after:avoid}
+    .print-only{display:block!important;color:var(--brand)}
+    .tl-item ul{font-size:8.8pt}
+    .card,.stat{padding:10px;break-inside:avoid;background:#fff!important}
+    .grid{gap:8px} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:1fr 1fr}
+    .about{grid-template-columns:1.5fr 1fr}
+    .tl{gap:10px} .tl-item{break-inside:avoid}
+    .thumb{display:none}
+    .contact{background:#fff!important;color:var(--ink);border:2px solid var(--brand);padding:14px;grid-template-columns:1fr 1fr}
+    .contact h2,.contact p{color:var(--ink)}
+    .contact-list a{background:#fff;color:var(--ink);padding:2px 0}
+    a{color:var(--ink)}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#inicio" class="logo"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="url(#lg)"/><path d="M9 28V13l6.5 8L22 13v15" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M33 16.5a6 6 0 1 0 0 7" fill="none" stroke="#99f6e4" stroke-width="3.2" stroke-linecap="round"/></svg><span class="wm"><b>Mario Codina</b><small>Web &amp; Diseño Digital</small></span></a>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="btn btn-primary" href="cv-mario-codina.pdf" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+      <span>Descargar CV</span>
+    </a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <!-- Para usar tu foto: sube foto.jpg a la carpeta y reemplaza "MC" por <img src="foto.jpg" alt="Mario Codina"> -->
+    <div class="avatar">MC</div>
+    <div>
+      <h1>Mario Codina Sánchez</h1>
+      <div class="role">Desarrollador Web &amp; Diseño de Contenido Digital</div>
+      <p class="lead">Más de 15 años en desarrollo de software y administración de sistemas. Creo páginas y aplicaciones web a medida, y produzco videos, imágenes, banners y logos para que tu negocio se vea profesional en internet.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+        <a class="btn btn-ghost" href="#portafolio">Ver trabajos</a>
+      </div>
+      <div class="print-only" style="margin-top:6px;font-weight:600">✉ codinasanchez03@gmail.com</div>
+      <div class="badges">
+        <span>✔ Trabajo 100% remoto</span>
+        <span>✔ +15 años de experiencia</span>
+        <span>✔ Entregas a tiempo</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-title">Servicios</div>
+    <h2>¿En qué puedo ayudarte?</h2>
+    <div class="grid g3">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <h3>Páginas web</h3>
+        <p>Sitios corporativos, landing pages y portafolios modernos, rápidos y adaptados a celular.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></div>
+        <h3>Aplicaciones web</h3>
+        <p>Sistemas a medida con base de datos: gestión, reservas, facturación, inventario y paneles de control.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div>
+        <h3>Creación y edición de videos</h3>
+        <p>Videos cortos para Reels, TikTok y YouTube, videos promocionales, subtítulos y edición.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <h3>Imágenes y banners</h3>
+        <p>Diseño y edición de imágenes para redes sociales, publicidad, sitios web y tiendas online.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+        <h3>Logos e identidad</h3>
+        <p>Creación y rediseño de logos, paleta de colores y piezas básicas de marca.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Transcripción de documentos</h3>
+        <p>Digitalización de documentos, PDF y escaneos a Word o Excel editables, con formato cuidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="sobre-mi">
+  <div class="wrap about">
+    <div>
+      <div class="sec-title">Sobre mí</div>
+      <h2>Tecnología con visión de negocio</h2>
+      <p>Soy Ingeniero Forestal de formación, pero he desarrollado toda mi carrera en el área tecnológica: administración de sistemas y desarrollo de software durante más de 15 años.</p>
+      <p>Complementé mi perfil técnico con un Máster en Marketing Digital y Analítica Web, lo que me permite crear soluciones que no solo funcionan bien, sino que también ayudan a vender y comunicar.</p>
+      <p class="no-print">Hoy ofrezco mis servicios de forma remota a empresas, emprendedores y profesionales que necesitan presencia digital de calidad.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>+15</b><small>años de experiencia</small></div>
+      <div class="stat"><b>6</b><small>servicios digitales</small></div>
+      <div class="stat"><b>Web</b><small>sistemas a medida</small></div>
+      <div class="stat"><b>100%</b><small>remoto</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <div class="sec-title">Habilidades</div>
+    <h2>Herramientas y tecnologías</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Desarrollo web</h3>
+        <div class="chips"><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">React.js</span><span class="chip">React Native</span><span class="chip">Scriptcase</span></div>
+      </div>
+      <div class="card">
+        <h3>Datos y sistemas</h3>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Administración de sistemas</span><span class="chip">Git</span><span class="chip">Analítica web</span></div>
+      </div>
+      <div class="card">
+        <h3>Diseño y contenido</h3>
+        <div class="chips"><span class="chip">CapCut</span><span class="chip">Microsoft Clipchamp</span><span class="chip">Google Flow</span><span class="chip">Edición de video</span><span class="chip">Diseño gráfico</span><span class="chip">Marketing digital</span><span class="chip">Redes sociales</span></div>
+      </div>
+      <div class="card">
+        <h3>IA y productividad</h3>
+        <div class="chips"><span class="chip">Google AI Studio</span><span class="chip">Google NotebookLM</span><span class="chip">Trello</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experiencia">
+  <div class="wrap grid g2" style="gap:40px">
+    <div>
+      <div class="sec-title">Trayectoria</div>
+      <h2>Experiencia</h2>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="meta">Actualidad · Freelance</div>
+          <h3>Desarrollador web y creador de contenido</h3>
+          <ul>
+            <li>Desarrollo de aplicaciones web a medida con Python y MySQL.</li>
+            <li>Producción de videos cortos y contenido para YouTube, TikTok y Pinterest.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="meta">+15 años</div>
+          <h3>Desarrollo de software y administración de sistemas</h3>
+          <ul>
+            <li>Desarrollo de sistemas con PHP, MySQL, Python, JavaScript y Scriptcase.</li>
+            <li>Administración de servidores, bases de datos y soporte técnico.</li>
+            <li>Modelos de datos, medidas DAX e informes en Power BI.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-title">Estudios</div>
+      <h2>Formación</h2>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="meta">Neetwork Business School</div>
+          <h3>Máster en Marketing Digital y Analítica Web</h3>
+        </div>
+        <div class="tl-item">
+          <div class="meta">Título profesional</div>
+          <h3>Ingeniería Forestal</h3>
+        </div>
+      </div>
+      <h2 style="margin-top:30px">Idiomas</h2>
+      <div class="chips"><span class="chip">Español — Nativo</span><span class="chip">Inglés — Lectura intermedia</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="portafolio">
+  <div class="wrap">
+    <div class="sec-title">Portafolio</div>
+    <h2>Proyectos destacados</h2>
+    <!-- Para agregar una imagen: reemplaza el texto dentro de .thumb por <img src="img/proyecto.jpg" alt="..."> -->
+    <div class="grid g3">
+      <div class="card">
+        <div class="thumb">App Rentacar</div>
+        <span class="tag">App web</span><span class="tag">Python</span><span class="tag">MySQL</span>
+        <h3>Sistema de gestión de arriendo de vehículos</h3>
+        <p>Contratos, flota, inspecciones, facturación, pagos, inventario y auditoría de eventos.</p>
+      </div>
+      <div class="card">
+        <div class="thumb">Marketplace inmobiliario</div>
+        <span class="tag">App web</span><span class="tag">En desarrollo</span>
+        <h3>Plataforma de compra y venta de inmuebles</h3>
+        <p>Registro de usuarios, publicación de propiedades con fotos, documentos y búsqueda.</p>
+      </div>
+      <div class="card">
+        <div class="thumb">Dashboards</div>
+        <span class="tag">Power BI</span><span class="tag">DAX</span>
+        <h3>Informes y paneles de datos</h3>
+        <p>Modelos de datos y dashboards para seguimiento de indicadores de negocio.</p>
+      </div>
+      <div class="card">
+        <div class="thumb">Videos cortos</div>
+        <span class="tag">Video</span><span class="tag">CapCut</span>
+        <h3>Contenido para YouTube y TikTok</h3>
+        <p>Guion, edición y publicación de videos cortos promocionales de productos.</p>
+      </div>
+      <div class="card">
+        <div class="thumb">Banners y pines</div>
+        <span class="tag">Diseño</span><span class="tag">Redes</span>
+        <h3>Piezas gráficas para redes</h3>
+        <p>Plantillas de pines, banners e imágenes de producto para Pinterest y redes sociales.</p>
+      </div>
+      <div class="card no-print">
+        <div class="thumb">Tu proyecto aquí</div>
+        <span class="tag">Disponible</span>
+        <h3>¿Tienes una idea?</h3>
+        <p>Cuéntame qué necesitas y te preparo una propuesta sin compromiso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt no-print">
+  <div class="wrap">
+    <div class="sec-title">Cómo trabajo</div>
+    <h2>Un proceso simple</h2>
+    <div class="grid g3" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card step"><b>1</b><h3>Conversamos</h3><p>Me cuentas tu idea y objetivos.</p></div>
+      <div class="card step"><b>2</b><h3>Propuesta</h3><p>Recibes alcance, plazo y presupuesto.</p></div>
+      <div class="card step"><b>3</b><h3>Desarrollo</h3><p>Te muestro avances para tus ajustes.</p></div>
+      <div class="card step"><b>4</b><h3>Entrega</h3><p>Archivos finales y soporte posterior.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="no-print">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Hablemos de tu proyecto</h2>
+        <p>Escríbeme y te respondo a la brevedad con una propuesta adaptada a lo que necesitas.</p>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:codinasanchez03@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          codinasanchez03@gmail.com
+        </a>
+        <!-- WhatsApp: descomenta y pon tu número con código de país, sin + ni espacios
+        <a href="https://wa.me/56900000000">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-13.5 7.8L3 21l1.2-4.5A9 9 0 1121 12z"/></svg>
+          WhatsApp
+        </a> -->
+        <!-- LinkedIn: descomenta y pon tu enlace
+        <a href="https://www.linkedin.com/in/tu-perfil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg>
+          LinkedIn
+        </a> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="y">2026</span> Mario Codina Sánchez · Desarrollo Web &amp; Diseño Digital</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
